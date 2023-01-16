@@ -24,7 +24,7 @@ const TabMenu = ({ tabValue }) => {
           {tabObj.map((tabObj) => (
             <div
               key={tabObj.id}
-              className={`tabsObj ${tabObj.id === active ? 'active' : ''}`}
+              className={`tabsObj ${tabObj.id == active ? 'active' : ''}`}
               onClick={() => openTab(tabObj.id, tabObj.url)}>
               {tabObj.title}
             </div>
