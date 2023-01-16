@@ -11,12 +11,20 @@ const tabObj = [
 ];
 
 const TabMenu = ({ tabValue }) => {
-  const [active, setActive] = React.useState(tabValue);
+  const [active, setActive] = React.useState(localStorage.getItem('tabid'));
   const navigate = useNavigate()
   const openTab = (id, url) => {
     navigate(`/${url}`)
     setActive(id);
+    localStorage.setItem('tabid', id.toString())
   }
+  const isMounted = React.useRef(false)
+  React.useEffect(() => {
+    if (isMounted.current) {
+      localStorage.setItem('tabid', tabValue.toString())
+    }
+    isMounted.current = true
+  }, [tabValue])
   return (
     <>
       <div className="">
