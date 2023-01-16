@@ -11,7 +11,9 @@ const tabObj = [
 ];
 
 const TabMenu = ({ tabValue }) => {
-  const [active, setActive] = React.useState(localStorage.getItem('tabid'));
+  const initialValue = localStorage.getItem('tabid') ? localStorage.getItem('tabid') : tabValue
+  console.log(initialValue)
+  const [active, setActive] = React.useState(initialValue);
   const navigate = useNavigate()
   const openTab = (id, url) => {
     navigate(`/${url}`)
