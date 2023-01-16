@@ -1,0 +1,15 @@
+.li_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.tabsObj {
+  padding: 5px;
+  line-height: 26px;
+}
+
+.active {
+  background-color: aqua;
+}
+
+.content {}
